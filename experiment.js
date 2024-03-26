@@ -106,9 +106,9 @@ var correct_responses = jsPsych.randomization.shuffle([
 
 var choices = [correct_responses[0][1], correct_responses[1][1]]
 
-//set up block stim. correct_responses indexed by [block][stim][type]
+//set up face stim. correct_responses indexed by [block][stim][type]
 var practice_stimuli = [{
-  stimulus: '<div class = centerbox><div  id = "stim1"></div></div>',
+  stimulus: '<div class = centerbox><img src="images/men_face_1.png" style="width: 100px; height: auto;" /></div>',
   data: {
     stim_id: 1,
     trial_id: 'stim',
@@ -116,7 +116,7 @@ var practice_stimuli = [{
   },
   key_answer: correct_responses[0][1]
 }, {
-  stimulus: '<div class = centerbox><div id = "stim2"></div></div>',
+  stimulus: '<div class = centerbox><img src="images/women_face_1.png" style="width: 100px; height: auto;" /></div>',
   data: {
     stim_id: 2,
     trial_id: 'stim',
@@ -124,6 +124,7 @@ var practice_stimuli = [{
   },
   key_answer: correct_responses[1][1]
 }];
+
 
 var test_stimuli_block = [{
   stimulus: '<div class = centerbox><div  id = "stim1"></div></div>',
