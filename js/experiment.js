@@ -106,6 +106,9 @@ var correct_responses = jsPsych.randomization.shuffle([
 
 var choices = [correct_responses[0][1], correct_responses[1][1]]
 
+// TODO: set up face stim. 
+// var face_stimu = 
+
 //set up face stim. correct_responses indexed by [block][stim][type]
 var practice_stimuli = [{
   stimulus: '<div class = centerbox><img src="images/men_face_1.png" style="width: 100px; height: auto;" /></div>',
