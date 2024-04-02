@@ -106,8 +106,9 @@ var correct_responses = jsPsych.randomization.shuffle([
 
 var choices = [correct_responses[0][1], correct_responses[1][1]]
 
-// TODO: set up face stim. 
-// var face_stimu = 
+// TODO: set up face stim path
+
+
 
 //set up face stim. correct_responses indexed by [block][stim][type]
 var practice_stimuli = [{
@@ -128,6 +129,26 @@ var practice_stimuli = [{
   key_answer: correct_responses[1][1]
 }];
 
+// TODO: set up test stim path, finish the function face_stimu
+// function face_stimu(conditions) {
+//   var face_stim = []
+//   for (var i = 0; i < conditions.length; i++) {
+//     face_stim.push('<div class = centerbox><img src="images/' + conditions[i] + '" style="width: 100px; height: auto;" /></div>')
+//   }
+//   return face_stim
+// }
+
+// function test_stimuli(stim){
+  
+//   return partice_timuli
+// }
+
+// for (var i = 0; i < conditions.length; i++) {
+//   stim_id =+ 1 
+//   face_stim.push('<div class = centerbox><img src="images/' + conditions[i] + '" style="width: 100px; height: auto;" /></div>')
+  
+//   return test_stimuli_block_1
+// } 
 
 var test_stimuli_block = [{
   stimulus: '<div class = centerbox><div  id = "stim1"></div></div>',
