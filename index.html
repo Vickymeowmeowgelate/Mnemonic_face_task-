@@ -1,12 +1,13 @@
-<!DOCTYPE html><html class=''>
+<!DOCTYPE html>
+<html class=''>
 <head>
     <meta charset='UTF-8'>
     <meta name="robots" content="noindex">
     <title>The Experiment Factory choice-reaction-time</title>
     
-<link rel='stylesheet' type='text/css' href='jspsych.css'>
-<link rel='stylesheet' type='text/css' href='default_style.css'>
-<link rel='stylesheet' type='text/css' href='style.css'>
+    <link rel='stylesheet' type='text/css' href='jspsych.css'>
+    <link rel='stylesheet' type='text/css' href='default_style.css'>
+    <link rel='stylesheet' type='text/css' href='style.css'>
 </head>
 
 <body>
@@ -23,18 +24,19 @@
 <script src='js/jspsych/plugins/jspsych-survey-text.js'></script>
 <script src='js/jspsych/poldrack_plugins/jspsych-single-stim-button.js'></script>
 <script src='js/jspsych/poldrack_plugins/poldrack_utils.js'></script>
-<script src='experiment.js'></script>
+<script src='utils.js'></script>
+<script src='instruction.js'></script>
+<script src='experiment_sec_1.js'></script>
 
 <script>
-$( document ).ready(function() {
-
-    jsPsych.init({
-             timeline: choice_reaction_time_experiment,
-             display_element: "getDisplayElement",
-             fullscreen: true,
-             on_trial_finish: function(data){
-               addID('choice-reaction-time')
-             },
+    $(document).ready(function() {
+        jsPsych.init({
+            timeline: choice_reaction_time_experiment,
+            display_element: "getDisplayElement",
+            fullscreen: true,
+            on_trial_finish: function(data){
+              addID('choice-reaction-time')
+            },
 
              on_finish: function(data){
 

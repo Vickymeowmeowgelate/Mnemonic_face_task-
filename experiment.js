@@ -100,8 +100,8 @@ var gap = 0
 var current_trial = 0
   //set stim/response mapping
 var correct_responses = jsPsych.randomization.shuffle([
-    ['"M"', 77],
-    ['"Z"', 90]
+  ['"F"', 70], 
+  ['"J"', 74]  
   ])
 
 var choices = [correct_responses[0][1], correct_responses[1][1]]
@@ -202,7 +202,7 @@ var feedback_instruct_block = {
 var instructions_block = {
   type: 'poldrack-instructions',
   pages: [
-    '<div class = centerbox><p class = block-text>In this experiment blue and orange squares will appear on the screen. You will be told to respond to one of the colored squares by pressing the "M" key and to the other by pressing the "Z" key. </p>' +
+    '<div class = centerbox><p class = block-text>In this experiment images of faces will appear on the screen. You will be told to respond to faces of females by pressing the "F" key and to faces of males by pressing the "J" key. </p>' +
     '<p class = block-text>We will begin with practice. If you see the <font color="orange">orange</font> square you should press the <strong>' +
     correct_responses[0][0] +
     '</strong> key. If you see the <font color="blue">blue</font> square you should press the <strong>' +
