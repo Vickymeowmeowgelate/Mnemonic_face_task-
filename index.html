@@ -24,53 +24,49 @@
 <script src='js/jspsych/plugins/jspsych-survey-text.js'></script>
 <script src='js/jspsych/poldrack_plugins/jspsych-single-stim-button.js'></script>
 <script src='js/jspsych/poldrack_plugins/poldrack_utils.js'></script>
-<script src='utils.js'></script>
 <script src='instruction.js'></script>
 <script src='experiment_sec_1.js'></script>
+<script src='utils.js'></script>
+
+
+
+
 
 <script>
-    $(document).ready(function() {
-        jsPsych.init({
-            timeline: choice_reaction_time_experiment,
-            display_element: "getDisplayElement",
-            fullscreen: true,
-            on_trial_finish: function(data){
-              addID('choice-reaction-time')
-            },
+$(document).ready(function() {
+    jsPsych.init({
+        timeline: choice_reaction_time_experiment,
+        display_element: "getDisplayElement",
+        fullscreen: true,
+        on_trial_finish: function(data){
+          addID('choice-reaction-time')
+        },
+        on_finish: function(data){
+            var promise = new Promise(function(resolve, reject) {
+                var data = jsPsych.data.dataAsJSON();
+                resolve(data);
+            })
 
-             on_finish: function(data){
-
-                 // Serialize the data
-                 var promise = new Promise(function(resolve, reject) {
-                     var data = jsPsych.data.dataAsJSON();
-                     resolve(data);
-                 })
-
-                 promise.then(function(data) {
-
-
-                     $.ajax({
-                         type: "POST",
-                         url: '/save',
-                         data: { "data": data },
-                         success: function(){ document.location = "/next" },
-                         dataType: "application/json",
-
-                         // Endpoint not running, local save
-                         error: function(err) {
-
-                             if (err.status == 200){
-                                 document.location = "/next";
-                             } else {
-                                 // If error, assue local save
-                                 jsPsych.data.localSave('choice-reaction-time_results.csv', 'csv');
-                             }
-                         }
-                     });
-                 })
-             }
-
-      });
+            promise.then(function(data) {
+                $.ajax({
+                    type: "POST",
+                    url: '/save',
+                    data: { "data": data },
+                    success: function(){ document.location = "/next" },
+                    dataType: "application/json",
+                    // Endpoint not running, local save
+                    error: function(err) {
+                        if (err.status == 200){
+                            document.location = "/next";
+                        } else {
+                            // If error, assume local save
+                            jsPsych.data.localSave('choice-reaction-time_results.csv', 'csv');
+                        }
+                    }
+                });
+            })
+        }
+    });
 });
 </script>
 </body>

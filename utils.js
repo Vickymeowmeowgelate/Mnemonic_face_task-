@@ -73,4 +73,3 @@ var appendData = function() {
     })
     current_trial = current_trial + 1
 }
-  

@@ -59,8 +59,6 @@ var test_stimuli_block = [{
   }
 }];
 
-
-
 var practice_trials = jsPsych.randomization.repeat(practice_stimuli, practice_len/2);
 var test_trials = []
 for (var b = 0; b < num_blocks; b++) {
@@ -81,3 +79,4 @@ for (var b = 0; b < num_blocks; b++) {
 choice_reaction_time_experiment.push(attention_node)
 choice_reaction_time_experiment.push(post_task_block)
 choice_reaction_time_experiment.push(end_block)
+
