@@ -16,6 +16,13 @@ var feedback_instruct_block = {
   timing_response: 180000
 };
 
+//set stim/response mapping
+var correct_responses = jsPsych.randomization.shuffle([
+  ['"F"', 70], 
+  ['"J"', 74]  
+])
+  
+
 /// This ensures that the subject does not read through the instructions too quickly.  If they do it too quickly, then we will go over the loop again.
 // TODO: Change the instruction text
 var instructions_block = {
@@ -110,8 +117,13 @@ var start_test_block = {
     cont_key: [13],
     timing_post_trial: 1000
 };
-  
-  
+
+var practice_trials = jsPsych.randomization.repeat(practice_stimuli, practice_len/2);
+var test_trials = []
+for (var b = 0; b < num_blocks; b++) {
+  test_trials.push(jsPsych.randomization.repeat(test_stimuli_block, block_len/2));
+}
+
 /* define practice block */
 var practice_block = {
     type: 'poldrack-categorize',
@@ -133,29 +145,3 @@ var practice_block = {
     on_finish: appendData
 }
   
-/* define test block */
-  
-var test_blocks = []
-for (var b = 0; b < num_blocks; b++) {
-      var test_block = {
-        type: 'poldrack-single-stim',
-        timeline: test_trials[b],
-        is_html: true,
-        data: {
-          trial_id: 'stim',
-          exp_stage: 'test'
-        },
-        choices: choices,
-        timing_response: 2000,
-        timing_post_trial: post_trial_gap,
-        on_finish: function(data) {
-          appendData()
-          correct = false
-          if (data.key_press === data.correct_response) {
-            correct = true
-          }
-          jsPsych.data.addDataToLastTrial({correct: correct})
-        }
-      };
-      test_blocks.push(test_block)
-}
