@@ -1,5 +1,25 @@
-# Experiment Factory Experiment
+# Mnemonic Face Task 
 
-Hi Friend! This is an Experiment that is friendly for use in the [Experiment Factory](https://expfactory.github.io/expfactory). You can run it locally by putting these files in a web server, or use the Experiment Factory to generate a reproducible container. Check out the documentation above for more information, or [post an issue](https://www.github.com/expfactory/expfactory/issues) if you have any questions.
+Mnemonic Task with face stimului
 
-![https://expfactory.github.io/expfactory/img/expfactoryticketyellow.png](https://expfactory.github.io/expfactory/img/expfactoryticketyellow.png)
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+What things you need to install the software and how to install them:
+
+- [Python 3](https://www.python.org/downloads/) - The programming language used to run the server.
+- A modern web browser.
+
+### Installing
+
+A step by step series of examples that tell you how to get a development environment running:
+
+1. **Nivigate to the project director on in terminal**
+    ```bash
+    cd yourpath/mnemonic_face_task
+2. **Start the server** 
+    ```bash
+    make server

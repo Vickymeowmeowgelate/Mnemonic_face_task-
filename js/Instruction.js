@@ -1,3 +1,6 @@
+/// This ensures that the subject does not read through the instructions too quickly.  If they do it too quickly, then we will go over the loop again.
+// TODO: Change the instruction text 
+
 class Instruction {
     constructor() {
       // Initialize any properties here, such as instruction texts or conditions
