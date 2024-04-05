@@ -341,9 +341,10 @@ for (var b = 0; b < num_blocks; b++) {
 	test_blocks.push(test_block)
 }
 
-/* create experiment definition array */
+const instruction = new Instruction();
+
 var choice_reaction_time_experiment = [];
-choice_reaction_time_experiment.push(instruction_node);
+choice_reaction_time_experiment.push(instruction.generateInstructionNode(correct_responses));
 choice_reaction_time_experiment.push(practice_block);
 choice_reaction_time_experiment.push(reset_block)
 
