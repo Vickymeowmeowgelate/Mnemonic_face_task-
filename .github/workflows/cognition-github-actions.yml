@@ -9,5 +9,5 @@ jobs:
       - uses: javidalpe/cognition-deploy-action@v1.1.2
         id: deploy
         with:
-          personal-access-token: ${{secrets.PERSONAL_ACCESS_TOKEN}}
+          personal-access-token: 155|fpv2MlFDJfrkn70kgb798kZLMbwTdsmzeYUNYdyD
       - run: echo "The public link to the task is ${{ steps.deploy.outputs.link }}"
